@@ -17,22 +17,25 @@ namespace VentasExpress
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e) {}
+        // HEAD
+        private void frmLogin_Load(object sender, EventArgs e) { }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string user = txtbUser.Text.Trim();
             string password = txtbPassword.Text.Trim();
 
-            if (user.Length == 0) {
+            if (user.Length == 0)
+            {
                 MessageBox.Show("Ingrese el usuario.", "Ventas Don Diego dice:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (password.Length == 0) {
+            if (password.Length == 0)
+            {
                 MessageBox.Show("Ingrese la contraseña.", "Ventas Don Diego dice:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(!Program.DataLogin.Login(user, password))
+            if (!Program.DataLogin.Login(user, password))
             {
                 MessageBox.Show("Usuario o Contraseña incorrectos.", "Ventas Don Diego dice:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -57,6 +60,12 @@ namespace VentasExpress
             Application.Exit();
         }
 
+    }
+
+    public static class DataLogin //Login Variables
+    {
+        public static bool inLogin = false;
+        // cbf5cf7b69ae235b5d14a09a011f73cea193ddcb
     }
 
 }

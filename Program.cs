@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// HEAD
 using System.Security.Cryptography; // FOR USE SHA256Managed Class
 using System.Text.RegularExpressions; // FOR USE Regex Validations
+//
+// cbf5cf7b69ae235b5d14a09a011f73cea193ddcb
 
 namespace VentasExpress
 {
     static class Program
     {
-        public static string convertHash256 (string stringText)
+        //// HEAD
+        public static string convertHash256(string stringText)
         {
             string hash = "";
 
@@ -59,7 +63,7 @@ namespace VentasExpress
                 {10, new object[] { "Desechables", 3.25, 100 } }
             };
             private static string loginUser = "";
-            
+
             public static bool Login(string user, string password)
             {
                 if (!users.ContainsKey(user)) return false;
@@ -105,9 +109,9 @@ namespace VentasExpress
                     }
                     else if (m_cuantity < c_cuantity)
                     {
-                        c_msg += c_nombre.ToUpper() + "    " + "------    " + (m_cuantity) + " x " + c_price.ToString("0.00") + "  " + "=" + "  " + "$"+(m_cuantity * c_price).ToString("0.00") + "    \"No se le pudo cobrar la cantidad de: ["+c_cuantity+"]; Por este motivo se le agrego el total de existencias.\"";
+                        c_msg += c_nombre.ToUpper() + "    " + "------    " + (m_cuantity) + " x " + c_price.ToString("0.00") + "  " + "=" + "  " + "$" + (m_cuantity * c_price).ToString("0.00") + "    \"No se le pudo cobrar la cantidad de: [" + c_cuantity + "]; Por este motivo se le agrego el total de existencias.\"";
                         c_msg += Environment.NewLine;
-                        t_sum += (m_cuantity*c_price);
+                        t_sum += (m_cuantity * c_price);
                         if (c_nombre.ToLower() == "pollo" || c_nombre.ToLower() == "gaseosa") { ++ifgift; }
                         menu[c_id][2] = 0;
                     }
@@ -136,6 +140,8 @@ namespace VentasExpress
             public static string getLoginUser() { return loginUser; }
             public static bool isInLogin() { return inLogin; }
         }
+        //
+        // cbf5cf7b69ae235b5d14a09a011f73cea193ddcb
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
