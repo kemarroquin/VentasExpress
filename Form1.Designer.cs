@@ -85,6 +85,7 @@ namespace VentasExpress
             this.txtbUser.Name = "txtbUser";
             this.txtbUser.Size = new System.Drawing.Size(282, 29);
             this.txtbUser.TabIndex = 4;
+            this.txtbUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbUser_KeyDown);
             // 
             // txtbPassword
             // 
@@ -93,6 +94,8 @@ namespace VentasExpress
             this.txtbPassword.Name = "txtbPassword";
             this.txtbPassword.Size = new System.Drawing.Size(282, 29);
             this.txtbPassword.TabIndex = 5;
+            this.txtbPassword.UseSystemPasswordChar = true;
+            this.txtbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPassword_KeyDown);
             // 
             // btnLogin
             // 
@@ -123,7 +126,7 @@ namespace VentasExpress
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";
-            this.Text = "Iniciar Sesión";
+            this.Text = "Iniciar Sesión | Ventas Don Diego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
